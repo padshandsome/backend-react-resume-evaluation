@@ -57,14 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_007978B35B034A69AC187BB4480D0C26 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_17AD82D719484D88AAF38E15A366539D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7290948E984D4F619715142CA5F18F01 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CFF66E500A5748918FFE39533C76F019 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_674915C818C6442D8A27AAB1FC53DA4E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DFE230D7C0FB45BD8567426FA9027430 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'nodejsresumeevaluation'
+          slot-name: 'Production'
           package: .
           
